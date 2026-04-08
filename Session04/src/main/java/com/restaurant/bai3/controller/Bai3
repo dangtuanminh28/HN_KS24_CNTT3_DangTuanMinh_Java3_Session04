@@ -1,0 +1,7 @@
+Cách A (/bai3/orders/5):
+Số 5 ở đây đóng vai trò là một thành phần của đường dẫn (URI Segment).
+Nó biến URL thành một địa chỉ định danh duy nhất cho tài nguyên.
+
+Cách B (/bai3/orders?id=5):
+Số 5 ở đây nằm trong chuỗi truy vấn (Query String), xuất hiện sau dấu ?.
+Nó đóng vai trò là một tham số lọc hoặc bổ sung thông tin cho đường dẫn gốc.
