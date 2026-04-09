@@ -25,6 +25,7 @@
         <br>
         <a href="<c:url value='/bai1/orders?action=orders'/>" class="btn">Xem chi tiết đơn hàng</a>
     </div>
+    <a href="<c:url value='/'/>">Quay lại</a>
 
 </div>
 

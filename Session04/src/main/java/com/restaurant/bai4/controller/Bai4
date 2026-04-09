@@ -1,0 +1,5 @@
+Mã lỗi: 400 Bad Request.
+
+Giải thích:
+Hệ thống không thể ép kiểu chuỗi "abc" sang kiểu Integer của biến limit
+Đây là cơ chế tự động bảo vệ dữ liệu của Spring MVC.

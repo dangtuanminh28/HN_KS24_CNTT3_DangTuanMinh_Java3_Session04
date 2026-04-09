@@ -2,6 +2,7 @@ package com.restaurant.bai2.controller;
 
 import com.restaurant.bai1.service.OrderService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,30 +19,24 @@ public class MenuController {
     }
 
     @GetMapping("/orders")
-    @ResponseBody
     public String getAllOrders() {
         return orderService.getAllOrders();
     }
 
     @GetMapping("/orders/{id}")
-    @ResponseBody
     public String getOrderById(@PathVariable Long id) {
         return orderService.getOrderById(id);
     }
 
     @GetMapping("/menu")
-    @ResponseBody
     public String getMenu(
-            @RequestParam(value = "category", required = false, defaultValue = "chay") String category
+            @RequestParam(value = "category", required = false, defaultValue = "chay") String category,
+            Model model
     ) {
-        String lowerCategory = category.toLowerCase();
+        String content = category.equalsIgnoreCase("man") ? "Món mặn: Gà, Cá" : "Món chay: Đậu phụ, Nấm";
 
-        if (lowerCategory.equals("chay")) {
-            return "Mon chay: Dau phu, Canh chua chay";
-        } else if (lowerCategory.equals("man")) {
-            return "Mon man: Ga quay, Ca kho";
-        } else {
-            return "Thuc don " + category + " ko co";
-        }
+        model.addAttribute("menuContent", content);
+
+        return "bai2";
     }
 }
